@@ -5,4 +5,5 @@ uses population projections to run resstock for simulations of potential future 
 
 \***_Warning_**\*: As of June 2023 this library is in beta and is not appropriate for production use.
 
-For more information on our methodology, installation, and running read the [documentation](https://NREL.github.io/buildstock-projections-docs/readme.html)
+## Inputs
+Check out [inputs](inputs/inputs.md) section
