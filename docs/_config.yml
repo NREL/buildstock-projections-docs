@@ -1,0 +1,11 @@
+title: BuildStock Projections Documentation
+author: Andrew Speake and Nathan Moore
+only_build_toc_files: false
+
+execute:
+  execute_notebooks: force
+
+repository:
+  url: https://github.com/NREL/buildstock-projections
+  path_to_book: docs
+  branch: main
