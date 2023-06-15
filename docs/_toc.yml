@@ -2,5 +2,11 @@
 format: jb-book
 root: readme
 chapters:
-- file: overview/overview
-- file: chapter
+- file: installation
+- file: inputs/inputs
+  sections:
+    - file: inputs/population
+    - file: inputs/building_inputs
+    - file: inputs/project_cfg
+- file: usage
+- file: outputs
