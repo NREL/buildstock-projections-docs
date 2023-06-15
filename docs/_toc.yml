@@ -2,6 +2,7 @@
 format: jb-book
 root: readme
 chapters:
+- file: overview
 - file: installation
 - file: inputs/inputs
   sections:
