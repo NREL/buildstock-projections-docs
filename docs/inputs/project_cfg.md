@@ -3,7 +3,8 @@ Arguments for the workflow can be set by passing inputs directly to the `run_abm
 
 ## Configuration file
 We recommend using a .yml project file to define configuration inputs. `project_national_test.yml` is and example file used for testing, descriptions of the inputs can be found below.
-##### **[`project_national.yml`](../../resources/project_national.yml)**
+
+##### **[`project_national.yml`](https://github.com/NREL/buildstock-projections/tree/main/resources/project_national.yml)**
 ```yml
 horizon: 2040
 timestep: 5
