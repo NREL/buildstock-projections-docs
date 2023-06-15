@@ -347,7 +347,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -363,6 +365,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-old-readme">FROM OLD README:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command Line Arguments</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -375,6 +386,63 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="running-the-workflow">
 <h1>Running the Workflow<a class="headerlink" href="#running-the-workflow" title="Permalink to this heading">#</a></h1>
 <p>… how to run the workflow</p>
+<ul class="simple">
+<li><p>checkout your branch of resstock…\</p></li>
+</ul>
+<section id="from-old-readme">
+<h2>FROM OLD README:<a class="headerlink" href="#from-old-readme" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Detailed documentation to help you start can be found <span class="xref myst">here</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">run_ABM</span></code> in the terminal to run the workflow and generate future buildstock.csv files (<code class="docutils literal notranslate"><span class="pre">run_ABM</span> <span class="pre">--help</span></code> for options)</p>
+<ul>
+<li><p>Ensure your local checkout of resstock (the resstock project_directory) matches the initial buildstock version, currently v3.0.0 in resources/project_national.yml</p></li>
+<li><p>Ensure the resources/options_lookup.tsv file is from the same version of resstock as well</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">results_viz</span></code> in the terminal to generate figures using the projected buildstock.csv files (<code class="docutils literal notranslate"><span class="pre">results_viz</span> <span class="pre">--help</span></code> for options)</p></li>
+</ul>
+</section>
+<section id="command-line-arguments">
+<h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: run_abm [-h] [-z HORIZON] [-t TIMESTEP] [-b BUILDSTOCK_PATH]</span>
+<span class="go">               [--write_buildstocks] [--write_results_summary]</span>
+<span class="go">               [--input_filepath_population INPUT_FILEPATH_POPULATION]</span>
+<span class="go">               [--input_filepath_existing INPUT_FILEPATH_EXISTING]</span>
+<span class="go">               [--input_filepath_new_construction INPUT_FILEPATH_NEW_CONSTRUCTION]</span>
+<span class="go">               [-pd PROJECT_DIRECTORY] [--base_weight BASE_WEIGHT]</span>
+<span class="go">               [-s {resstock,comstock}] [-p] [-y Y]</span>
+
+<span class="go">options:</span>
+<span class="go">  -h, --help            show this help message and exit</span>
+<span class="go">  -z HORIZON, --horizon HORIZON</span>
+<span class="go">                        Projection horizon (year), starts at 2020</span>
+<span class="go">  -t TIMESTEP, --timestep TIMESTEP</span>
+<span class="go">                        Timestep (years).</span>
+<span class="go">  -b BUILDSTOCK_PATH, --buildstock_path BUILDSTOCK_PATH</span>
+<span class="go">                        Buildstock csv path.</span>
+<span class="go">  --write_buildstocks   Write buildstock csvs.</span>
+<span class="go">  --write_results_summary</span>
+<span class="go">                        Write results summary csv.</span>
+<span class="go">  --input_filepath_population INPUT_FILEPATH_POPULATION</span>
+<span class="go">                        Path to directory containing population file inputs.</span>
+<span class="go">  --input_filepath_existing INPUT_FILEPATH_EXISTING</span>
+<span class="go">                        Path to directory containing existing file inputs</span>
+<span class="go">  --input_filepath_new_construction INPUT_FILEPATH_NEW_CONSTRUCTION</span>
+<span class="go">                        Path to directory containing new construction file</span>
+<span class="go">                        inputs</span>
+<span class="go">  -pd PROJECT_DIRECTORY, --project_directory PROJECT_DIRECTORY</span>
+<span class="go">                        Path to the ResStock project directory, if applicable.</span>
+<span class="go">  --base_weight BASE_WEIGHT</span>
+<span class="go">                        Starting weight to apply to all rows in initial</span>
+<span class="go">                        buildstock</span>
+<span class="go">  -s {resstock,comstock}, --stock_type {resstock,comstock}</span>
+<span class="go">                        Stock type, resstock or comstock</span>
+<span class="go">  -p, --print_statements</span>
+<span class="go">                        Print outputs after each step</span>
+<span class="go">  -y Y                  Filepath to yml input.</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -435,6 +503,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-old-readme">FROM OLD README:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command Line Arguments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

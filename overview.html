@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Outputs and Vizualizations &#8212; BuildStock Projections Documentation</title>
+    <title>Overview and Methodology &#8212; BuildStock Projections Documentation</title>
   
   
   
@@ -61,10 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'outputs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'overview';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Running the Workflow" href="usage.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -149,7 +148,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="inputs/inputs.html">Inputs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="inputs/population.html">Population Input Definitions</a></li>
@@ -158,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Running the Workflow</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Outputs and Vizualizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">Outputs and Vizualizations</a></li>
 </ul>
 
     </div>
@@ -230,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NREL/buildstock-projections/edit/main/docs/outputs.md" target="_blank"
+      <li><a href="https://github.com/NREL/buildstock-projections/edit/main/docs/overview.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -247,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NREL/buildstock-projections/issues/new?title=Issue%20on%20page%20%2Foutputs.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NREL/buildstock-projections/issues/new?title=Issue%20on%20page%20%2Foverview.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/outputs.md" target="_blank"
+      <li><a href="_sources/overview.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -359,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Outputs and Vizualizations</h1>
+    <h1>Overview and Methodology</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,12 +368,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results-summary">Results Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview and Methodology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-projections">Population Projections 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demolition">Demolition 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacancy">Vacancy 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction">New Construction 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-options-new-construction-existing">Building Options (New Construction &amp; Existing)🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-visualization">Results Visualization 🔗</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vizualization">Vizualization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -385,32 +390,106 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="outputs-and-vizualizations">
-<h1>Outputs and Vizualizations<a class="headerlink" href="#outputs-and-vizualizations" title="Permalink to this heading">#</a></h1>
-<section id="output-files">
-<h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this heading">#</a></h2>
-<p>… output files</p>
-<section id="results-summary">
-<h3>Results Summary<a class="headerlink" href="#results-summary" title="Permalink to this heading">#</a></h3>
+  <section class="tex2jax_ignore mathjax_ignore" id="overview-and-methodology">
+<h1>Overview and Methodology<a class="headerlink" href="#overview-and-methodology" title="Permalink to this heading">#</a></h1>
+<p>The buildstock-projections library calculates future building counts and tenure status while also providing a mechanism for users to define future code adoption and existing building technology adoption. This is accomplished through the modules described below. There are four steps that get repeated with each timestep, where operations are performed on the previous years buildstock. Modules are applied sequentially as:</p>
+<ol class="arabic simple">
+<li><p>Population Projections (prior to first timestep)</p></li>
+<li><p>Demolition (at each timestep)</p></li>
+<li><p>Vacancy (at each timestep)</p></li>
+<li><p>New Construction (at each timestep)</p></li>
+<li><p>Building Options (at each timestep)</p>
 <ul class="simple">
-<li><p>Year</p></li>
-<li><p>Population</p></li>
-<li><p>Demolished</p></li>
-<li><p>Vacancy rate</p></li>
-<li><p>Desired Vacancy Change</p></li>
-<li><p>Final Vacancy Change</p></li>
-<li><p>New Construction	Occupied</p></li>
-<li><p>Vacant</p></li>
-<li><p>Total buildings</p></li>
-<li><p>Cumulative demolished</p></li>
-<li><p>age_&lt;yr1&gt;_&lt;yr2&gt;:</p></li>
+<li><p>New construction options</p></li>
+<li><p>Existing building options</p></li>
+</ul>
+</li>
+<li><p>Results Vizualization (after final timestep)</p></li>
+</ol>
+<section id="population-projections">
+<h2>Population Projections <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/population_estimate.py">🔗</a><a class="headerlink" href="#population-projections" title="Permalink to this heading">#</a></h2>
+<p>The population module imports population projection inputs and applies a regression to infer missing data.This module runs prior to iterating through future projection years and the outputs inform other modules. Inputs for the population module include baseline population data by PUMA, and population data for at least one future year. A 2nd order polynomial regression is applied to the input data to infer PUMA populations for timesteps in which there is no data. An example for one PUMA is shown below, where the population inputs are provided for 2020, 2030, and 2050.</p>
+<img src="./inputs/population_projection_example.png" width="60%" height="60%">  
+<p>Documentation regarding input files for population can be found <a class="reference internal" href="inputs/population.html"><span class="doc std std-doc">here</span></a></p>
+</section>
+<section id="demolition">
+<h2>Demolition <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/demolition.py">🔗</a><a class="headerlink" href="#demolition" title="Permalink to this heading">#</a></h2>
+<p>The demolition module calculates expected demolition and updates the building stock to represent demolition for each PUMA and year. The current demolition model is only implemented for ResStock and assumes flat demolition rates by building vintage with a random scaling factor. To apply rates, the total count of residential buildings by PUMA and Age Bin is calculated and reduced by the specific rate for the PUMA and age bin combination, as shown in the example below. This new count is then proportionately distributed to the building rows based on their PUMA and Age Bin.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>PUMA</p></th>
+<th class="head"><p>Age Bin</p></th>
+<th class="head"><p>Demolition Rate</p></th>
+<th class="head"><p>Initial Count</p></th>
+<th class="head"><p>New Count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AL, 00100</p></td>
+<td><p>(0, 9)</p></td>
+<td><p>0.001</p></td>
+<td><p>8,744</p></td>
+<td><p>8,735.26</p></td>
+</tr>
+<tr class="row-odd"><td><p>AL, 00100</p></td>
+<td><p>(10, 19)</p></td>
+<td><p>0.0014</p></td>
+<td><p>9,200</p></td>
+<td><p>9,187.12</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>WY, 00500</p></td>
+<td><p>100+</p></td>
+<td><p>0.0021</p></td>
+<td><p>7,500</p></td>
+<td><p>7,484.25</p></td>
+</tr>
+</tbody>
+</table>
+<p>This is a very simplified approach to modeling demolition; future work will include implementing demolition projections for commercial buildings and building a more advanced model for projection residential demolition.</p>
+</section>
+<section id="vacancy">
+<h2>Vacancy <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/vacancy.py">🔗</a><a class="headerlink" href="#vacancy" title="Permalink to this heading">#</a></h2>
+<p>Vacancy is only applicable to residential buildings, and follows a similar approach as demolition. Vacancy rates by PUMA are currently assumed to be the same for each future year run, defaulting to the vacancy rates calculated from the initial buildstock. The application of these rates differs from demolition in that the total count of buildings does not change, instead, just the ratio of occupied to vacant units changes. For a given PUMA, if the desired vacancy rate is higher than the existing, than the weights of occupied units is increased and the weights of vacant units is decreased, the opposite occurs when the desired vacancy rate is less than the existing.</p>
+<p>Future work may include implementation of a more advanced vacancy model that introduces other external variables such as population change.</p>
+</section>
+<section id="new-construction">
+<h2>New Construction <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/new_construction.py">🔗</a><a class="headerlink" href="#new-construction" title="Permalink to this heading">#</a></h2>
+<p>The new construction module calculates the number of new units or buildings that should be added in a timestep, then samples to generate new buildstock samples. Additionally, the building options module is called to update the new construction and existing options, and the vacant units are scaled to ensure that the desired population projection is met. The steps for new construction differ for ResStock and ComStock:</p>
+<p><strong>ResStock</strong></p>
+<ul class="simple">
+<li><p><strong>New Construction Required</strong>: The population change from the previous year is calculated and divided by the occupant density to get a desired number of new units for each PUMA. Constraints are applied to this operation to apply a minimum construction rates, maximum construction rates, and bounds on the year to year change in construction rates.</p></li>
+<li><p><strong>New Construction Sampling</strong>: The desired number of units is divided by the base sample weight to estimate the number of new rows needed to meet the population. This</p></li>
+<li><p><strong>Vacancy Correction</strong>: Because of the constraints applied and the , the population change is not always met after sampling</p></li>
+</ul>
+<p><strong>ComStock</strong></p>
+<ul class="simple">
+<li><p><strong>New Construction Required</strong>: The population change from the previous year is calculated and divided by the occupant density to get a desired number of new units for each PUMA.</p></li>
+<li><p><strong>New Construction Sampling</strong>: The desired number of units is divided by the base sample weight to</p></li>
+<li><p><strong>Vacancy Correction</strong>: Not applicable to commercial</p></li>
 </ul>
 </section>
+<section id="building-options-new-construction-existing">
+<h2>Building Options (New Construction &amp; Existing)<a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/stock.py">🔗</a><a class="headerlink" href="#building-options-new-construction-existing" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="vizualization">
-<h2>Vizualization<a class="headerlink" href="#vizualization" title="Permalink to this heading">#</a></h2>
-<p>… how to run and interpret vizualization</p>
+<section id="results-visualization">
+<h2>Results Visualization <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/results_viz.py">🔗</a><a class="headerlink" href="#results-visualization" title="Permalink to this heading">#</a></h2>
+<p>…</p>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="limitations">
+<h1>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">#</a></h1>
+<p>Gaps in the current model:</p>
+<ul class="simple">
+<li><p>Not demolition model for ComStock</p></li>
+<li><p>Simple demo model for ResStock</p></li>
+<li><p>Simple vacancy model for RessTock</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -444,15 +523,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="usage.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Running the Workflow</p>
-      </div>
-    </a>
 </div></div>
   
 </div>
@@ -471,12 +541,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results-summary">Results Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview and Methodology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-projections">Population Projections 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demolition">Demolition 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacancy">Vacancy 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction">New Construction 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-options-new-construction-existing">Building Options (New Construction &amp; Existing)🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-visualization">Results Visualization 🔗</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vizualization">Vizualization</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>

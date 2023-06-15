@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Projection Configuration &#8212; BuildStock Projections Documentation</title>
+    <title>Building Inputs File Definition &#8212; BuildStock Projections Documentation</title>
   
   
   
@@ -61,11 +61,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'inputs/project_cfg';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'inputs/building_options';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Running the Workflow" href="../usage.html" />
-    <link rel="prev" title="Building Inputs File Definition" href="building_inputs.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -150,12 +148,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="inputs.html">Inputs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="inputs.html">Inputs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="population.html">Population Input Definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="building_inputs.html">Building Inputs File Definition</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Projection Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project_cfg.html">Projection Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Running the Workflow</a></li>
@@ -231,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NREL/buildstock-projections/edit/main/docs/inputs/project_cfg.md" target="_blank"
+      <li><a href="https://github.com/NREL/buildstock-projections/edit/main/docs/inputs/building_options.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -248,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NREL/buildstock-projections/issues/new?title=Issue%20on%20page%20%2Finputs/project_cfg.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NREL/buildstock-projections/issues/new?title=Issue%20on%20page%20%2Finputs/building_options.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/inputs/project_cfg.md" target="_blank"
+      <li><a href="../_sources/inputs/building_options.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Projection Configuration</h1>
+    <h1>Building Inputs File Definition</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,13 +368,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file">Configuration file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-national-yml"><strong><code class="docutils literal notranslate"><span class="pre">project_national.yml</span></code></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock-configuration">ResStock Configuration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comstock-configuation">ComStock Configuation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line">Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-apply">Package Apply</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction">New Construction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-buildings">Existing Buildings</a></li>
 </ul>
             </nav>
         </div>
@@ -388,67 +382,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="projection-configuration">
-<h1>Projection Configuration<a class="headerlink" href="#projection-configuration" title="Permalink to this heading">#</a></h1>
-<p>Arguments for the workflow can be set by passing inputs directly to the <code class="docutils literal notranslate"><span class="pre">run_abm</span></code> command or using a configuration .yml file, as described below.</p>
-<section id="configuration-file">
-<h2>Configuration file<a class="headerlink" href="#configuration-file" title="Permalink to this heading">#</a></h2>
-<p>We recommend using a .yml project file to define configuration inputs. <code class="docutils literal notranslate"><span class="pre">project_national_test.yml</span></code> is and example file used for testing, descriptions of the inputs can be found below.</p>
-<section id="project-national-yml">
-<h3><strong><a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources/project_national.yml"><code class="docutils literal notranslate"><span class="pre">project_national.yml</span></code></a></strong><a class="headerlink" href="#project-national-yml" title="Permalink to this heading">#</a></h3>
-<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>horizon: 2040
-timestep: 5
-print_statements: True
-write_buildstocks: True
-write_results_summary: True
-input_filepath_population: &#39;./inputs/population&#39;
-comstock:
-  buildstock_path: &#39;./com_buildstock_350k.csv.gz&#39;
-  input_filepath_new_construction: &#39;./inputs/new_construction_comstock&#39;
-  input_filepath_existing: &#39;./inputs/existing_comstock&#39;
-  geo_resolution: &#39;na&#39;
-resstock:
-  buildstock_path: &#39;./res_buildstock_550k_v3.0.0.csv.gz&#39;
-  project_directory: &#39;../resstock/project_national&#39;
-  input_filepath_new_construction: &#39;./inputs/new_construction_resstock&#39;
-  input_filepath_existing: &#39;./inputs/existing_resstock&#39;
-  geo_resolution: &#39;na&#39;
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">horizon</span></code> (<em>optional</em>) (int): The projection horizon across which the workflow runs specified as a year &gt; 2020</p>
-<ul class="simple">
-<li><p>Units: date (year)</p></li>
-<li><p>Default: 2040</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">timestep</span></code> (<em>optional</em>) (int): The time interval in years at which the workflow runs.</p>
-<ul class="simple">
-<li><p>Units: year</p></li>
-<li><p>Default: 5</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">print_statements</span></code> (<em>optional</em>) (bool): print timestep-level details to the terminal. Default=True<br />
-<code class="docutils literal notranslate"><span class="pre">write_buildstocks</span></code> (<em>optional</em>) (bool): write the buildstock.csvs for each timestep to buildstock-projections/outputs. Default=True<br />
-<code class="docutils literal notranslate"><span class="pre">write_summary</span></code> (<em>optional</em>) (bool): write a csv file summarizing various outputs as detailed in the <a class="reference internal" href="../outputs.html"><span class="doc std std-doc">outputs</span></a> section. Default=True<br />
-<code class="docutils literal notranslate"><span class="pre">stock_type</span> <span class="pre">(resstock/comstock)</span></code>: configuration file must contain at least a <code class="docutils literal notranslate"><span class="pre">comstock</span></code> or a <code class="docutils literal notranslate"><span class="pre">resstock</span></code> block, described below.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="building-inputs-file-definition">
+<h1>Building Inputs File Definition<a class="headerlink" href="#building-inputs-file-definition" title="Permalink to this heading">#</a></h1>
+<p>FIXME</p>
+<p>At each timestep, building stock inputs can be updated for the existing stock or the set of new construction buildings generated using the same .csv file convention. New construction inputs typically represent future code or</p>
+<section id="package-apply">
+<h2>Package Apply<a class="headerlink" href="#package-apply" title="Permalink to this heading">#</a></h2>
+<p>FIXME</p>
+<p>Both new construction and existing inputs typically include a package_apply.csv file.</p>
 </section>
-<section id="resstock-configuration">
-<h3>ResStock Configuration<a class="headerlink" href="#resstock-configuration" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">buildstock_path</span></code> (str): filepath to the baseline ResStock buildstock.csv; can be an absolute or relative path.<br />
-<code class="docutils literal notranslate"><span class="pre">project_directory</span></code> (str):  ResStock project directory path that contains <code class="docutils literal notranslate"><span class="pre">housing_characteristics/</span></code> and <code class="docutils literal notranslate"><span class="pre">options_lookup.tsv</span></code>; can be an absolute or relative path.<br />
-<code class="docutils literal notranslate"><span class="pre">input_filepath_new_construction</span></code> (str): directory containing future year building options to be applied to new construction buildings, such as future energy codes; can be an absolute or relative path.<br />
-<code class="docutils literal notranslate"><span class="pre">input_filepath_existing</span></code> (<em>optional</em>) (str): directory containing future year building options to be applied to existing buildings; can be an absolute or relative path.
-<code class="docutils literal notranslate"><span class="pre">geo_resolution</span></code> (<em>optional</em>) (str): <strong>Not implemented</strong>. Specify the geographic resolution at which modules are run. Default=”PUMA”</p>
+<section id="new-construction">
+<h2>New Construction<a class="headerlink" href="#new-construction" title="Permalink to this heading">#</a></h2>
+<p>FIXME</p>
 </section>
-<section id="comstock-configuation">
-<h3>ComStock Configuation<a class="headerlink" href="#comstock-configuation" title="Permalink to this heading">#</a></h3>
-<p><code class="docutils literal notranslate"><span class="pre">buildstock_path</span></code>: filepath to the baseline ComStock buildstock.csv; can be absolute or realtive.<br />
-<code class="docutils literal notranslate"><span class="pre">input_filepath_new_construction</span></code> (str): directory containing future year building options to be applied to new construction buildings, such as future energy codes; can be an absolute or relative path.<br />
-<code class="docutils literal notranslate"><span class="pre">input_filepath_existing</span></code> (<em>optional</em>) (str): directory containing future year building options to be applied to existing buildings; can be an absolute or relative path.
-<code class="docutils literal notranslate"><span class="pre">geo_resolution</span></code> (<em>optional</em>) (str): <strong>Not implemented</strong>. Specify the geographic resolution at which modules are run. Default=”PUMA”</p>
-</section>
-</section>
-<section id="command-line">
-<h2>Command Line<a class="headerlink" href="#command-line" title="Permalink to this heading">#</a></h2>
-<p>As an alternative to using a configuration file, the above inputs can be passed directly to the terminal command as arguments, which is described in more detail in <a class="reference internal" href="../usage.html"><span class="doc std std-doc">Running the Workflow</span></a></p>
+<section id="existing-buildings">
+<h2>Existing Buildings<a class="headerlink" href="#existing-buildings" title="Permalink to this heading">#</a></h2>
+<p>FIXME</p>
 </section>
 </section>
 
@@ -483,24 +432,6 @@ resstock:
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="building_inputs.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Building Inputs File Definition</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../usage.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Running the Workflow</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -519,13 +450,9 @@ resstock:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file">Configuration file</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#project-national-yml"><strong><code class="docutils literal notranslate"><span class="pre">project_national.yml</span></code></strong></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock-configuration">ResStock Configuration</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comstock-configuation">ComStock Configuation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line">Command Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-apply">Package Apply</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction">New Construction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-buildings">Existing Buildings</a></li>
 </ul>
   </nav></div>
 
