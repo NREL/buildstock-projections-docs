@@ -2,9 +2,8 @@
 Arguments for the workflow can be set by passing inputs directly to the `run_abm` command or using a configuration .yml file, as described below. 
 
 ## Configuration file
-We recommend using a .yml project file to define configuration inputs. `project_national_test.yml` is and example file used for testing, descriptions of the inputs can be found below.
+We recommend using a .yml project file to define configuration inputs. [`project_national_test.yml`](https://github.com/NREL/buildstock-projections/tree/main/resources/project_national.yml) is an example file shown below with descriptions of the inputs
 
-##### **[`project_national.yml`](https://github.com/NREL/buildstock-projections/tree/main/resources/project_national.yml)**
 ```yml
 horizon: 2040
 timestep: 5
@@ -25,17 +24,18 @@ resstock:
   geo_resolution: 'na'
 ```
 
-`horizon` (*optional*) (int): The projection horizon across which the workflow runs specified as a year > 2020
-- Units: date (year)
-- Default: 2040
-
+`horizon` (*optional*) (int): The projection horizon across which the workflow runs specified as a year > 2020.  
+&nbsp;&nbsp;&nbsp;&nbsp;**Units**: date (year), **Default**=2040  
 `timestep` (*optional*) (int): The time interval in years at which the workflow runs.  
-- Units: year
-- Default: 5
-
-`print_statements` (*optional*) (bool): print timestep-level details to the terminal. Default=True  
-`write_buildstocks` (*optional*) (bool): write the buildstock.csvs for each timestep to buildstock-projections/outputs. Default=True  
-`write_summary` (*optional*) (bool): write a csv file summarizing various outputs as detailed in the [outputs](../outputs) section. Default=True  
+&nbsp;&nbsp;&nbsp;&nbsp;**Units**: year, **Default**=5  
+`print_statements` (*optional*) (bool): print timestep-level details to the terminal.  
+&nbsp;&nbsp;&nbsp;&nbsp;**Default**=True  
+`write_buildstocks` (*optional*) (bool): write the buildstock.csvs for each timestep to buildstock-projections/outputs.  
+&nbsp;&nbsp;&nbsp;&nbsp;**Default**=True  
+`write_results_summary` (*optional*) (bool): write a csv file summarizing various outputs as detailed in the [outputs](../outputs) section.  
+&nbsp;&nbsp;&nbsp;&nbsp;**Default**=True  
+`input_filepath_population` (*optional*) (str): path to population input files  
+&nbsp;&nbsp;&nbsp;&nbsp;**Default**='buildstockprojections/resources/inputs/population'  
 `stock_type (resstock/comstock)`: configuration file must contain at least a `comstock` or a `resstock` block, described below. 
 ### ResStock Configuration
 `buildstock_path` (str): filepath to the baseline ResStock buildstock.csv; can be an absolute or relative path.      
