@@ -1,4 +1,4 @@
-# Projection Configuration
+# Project Configuration
 Arguments for the workflow can be set by passing inputs directly to the `run_abm` command or using a configuration .yml file, as described below. 
 
 ## Configuration file

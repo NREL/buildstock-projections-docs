@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Building Inputs File Definition &#8212; BuildStock Projections Documentation</title>
+    <title>Projected Building Inputs &#8212; BuildStock Projections Documentation</title>
   
   
   
@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'inputs/building_options';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running the Workflow" href="../usage.html" />
+    <link rel="prev" title="BuildStock Files" href="buildstocks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,14 +150,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview and Methodology</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="inputs.html">Inputs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="project_cfg.html">Projection Configuration</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="inputs.html">Inputs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project_cfg.html">Project Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="population.html">Population</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building_inputs.html">Building Inputs File Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildstocks.html">BuildStock Files</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Projected Building Inputs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Running the Workflow</a></li>
@@ -360,7 +363,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Building Inputs File Definition</h1>
+    <h1>Projected Building Inputs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,9 +373,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-apply">Package Apply</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction">New Construction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-buildings">Existing Buildings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-apply-file">Package Apply File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-option-files">Building Option Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#old-readme-building-inputs-files">Old readme - <span class="xref myst">Building inputs files</span></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -384,22 +389,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="building-inputs-file-definition">
-<h1>Building Inputs File Definition<a class="headerlink" href="#building-inputs-file-definition" title="Permalink to this heading">#</a></h1>
-<p>FIXME</p>
-<p>At each timestep, building stock inputs can be updated for the existing stock or the set of new construction buildings generated using the same .csv file convention. New construction inputs typically represent future code or</p>
-<section id="package-apply">
-<h2>Package Apply<a class="headerlink" href="#package-apply" title="Permalink to this heading">#</a></h2>
-<p>FIXME</p>
-<p>Both new construction and existing inputs typically include a package_apply.csv file.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="projected-building-inputs">
+<h1>Projected Building Inputs<a class="headerlink" href="#projected-building-inputs" title="Permalink to this heading">#</a></h1>
+<p>At each timestep, building stock inputs can be updated for the existing stock and/or the set of new construction buildings with the use of a common .csv file convention. We provide example files for new construction (ResStock and ComStock) <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources/inputs">here</a>, while more complex test files for <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/existing">existing</a> and <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/new_construction">new construction</a> ResStock buildings can be found in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA">tests</a> directory.</p>
+<section id="package-apply-file">
+<h2>Package Apply File<a class="headerlink" href="#package-apply-file" title="Permalink to this heading">#</a></h2>
+<p>Both new construction and existing inputs may include a package_apply.csv file.</p>
 </section>
-<section id="new-construction">
-<h2>New Construction<a class="headerlink" href="#new-construction" title="Permalink to this heading">#</a></h2>
+<section id="building-option-files">
+<h2>Building Option Files<a class="headerlink" href="#building-option-files" title="Permalink to this heading">#</a></h2>
 <p>FIXME</p>
+<section id="old-readme-building-inputs-files">
+<h3>Old readme - <span class="xref myst">Building inputs files</span><a class="headerlink" href="#old-readme-building-inputs-files" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>These input files describe how existing and new construction building characteristics get updated at each future timestep</p></li>
+<li><p>These are applied at each timestep, so a timestep greater than 1 may lead to the new higher efficiency building characteristics being applied earlier than expected</p>
+<ul>
+<li><p>e.g. if the timestep is 5 (sampling at 2020, 2025, 2030, etc) and a new efficiency characteristic is added in 2027, when the 2030 sample occurs all buildings between 2025 &amp; 2030 will have the new higher efficiency</p></li>
+</ul>
+</li>
+<li><p>Examples are found in <span class="xref myst">resources/inputs/new_construction_*/</span> to define future building changes in buildstock parameters</p>
+<ul>
+<li><p>ComStock input files are not yet defined. Development is left to the user</p></li>
+</ul>
+</li>
+<li><p><em><strong>Should be altered</strong></em> to match your estimates of future building codes and technology adoption rates</p></li>
+<li><p>Must be compatible with the current buildstock version</p></li>
+</ul>
 </section>
-<section id="existing-buildings">
-<h2>Existing Buildings<a class="headerlink" href="#existing-buildings" title="Permalink to this heading">#</a></h2>
-<p>FIXME</p>
 </section>
 </section>
 
@@ -434,6 +451,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="buildstocks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BuildStock Files</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../usage.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Running the Workflow</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -452,9 +487,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-apply">Package Apply</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction">New Construction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-buildings">Existing Buildings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#package-apply-file">Package Apply File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-option-files">Building Option Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#old-readme-building-inputs-files">Old readme - <span class="xref myst">Building inputs files</span></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
