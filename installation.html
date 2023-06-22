@@ -155,9 +155,9 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="inputs/inputs.html">Inputs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="inputs/population.html">Population Input Definitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inputs/building_inputs.html">Building Inputs File Definition</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inputs/project_cfg.html">Projection Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/population.html">Population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/building_inputs.html">Building Inputs File Definition</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Running the Workflow</a></li>
@@ -372,9 +372,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-installation-steps">Minimum Installation Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock">ResStock</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#developers">Developers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-installation-steps">Minimum Installation Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock">ResStock</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -394,21 +395,13 @@ document.write(`
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/NREL/buildstock-projections">buildstock-projections repo</a></p></li>
 <li><p>Create &amp; activate your favorite venv in the repo (I prefer pyenv for <a class="reference external" href="https://github.com/pyenv/pyenv#installation">mac/linux</a> or <a class="reference external" href="https://github.com/pyenv-win/pyenv-win#installation">windows</a>, and the <a class="reference external" href="https://github.com/pyenv/pyenv-virtualenv">virtualenv plugin</a>)</p></li>
-<li><p>run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span> <span class="pre">setuptools</span> <span class="pre">.</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span> <span class="pre">--user</span></code></p></li>
 <li><p>If running for ResStock, clone the <a class="reference external" href="https://github.com/NREL/resstock">resstock repo</a></p></li>
 </ul>
-</section>
 <section id="resstock">
-<h2>ResStock<a class="headerlink" href="#resstock" title="Permalink to this heading">#</a></h2>
+<h3>ResStock<a class="headerlink" href="#resstock" title="Permalink to this heading">#</a></h3>
 <p>If running projections for ResStock, a local ResStock checkout is required to enable sampling of housing characteristics. Any version of ResStock should be compatible with BuildStock-Projections so long as the initial buildstock.csv aligns with the checked out version.</p>
 </section>
-<section id="developers">
-<h2>Developers<a class="headerlink" href="#developers" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>FIXME: run with -e</p></li>
-<li><p>FIXME: building documentation</p></li>
-<li><p>FIXME: running tests</p></li>
-</ul>
 </section>
 </section>
 
@@ -479,9 +472,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-installation-steps">Minimum Installation Steps</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock">ResStock</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#developers">Developers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimum-installation-steps">Minimum Installation Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock">ResStock</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
