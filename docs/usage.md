@@ -1,18 +1,9 @@
 # Running the Workflow
-
-... how to run the workflow
-
-- checkout your branch of resstock...\
-  
-### FROM OLD README:
-- Detailed documentation to help you start can be found [here](#documentation)
-- `run_ABM` in the terminal to run the workflow and generate future buildstock.csv files (`run_ABM --help` for options)
-    - Ensure your local checkout of resstock (the resstock project_directory) matches the initial buildstock version, currently v3.0.0 in resources/project_national.yml
-    - Ensure the resources/options_lookup.tsv file is from the same version of resstock as well
-- `results_viz` in the terminal to generate figures using the projected buildstock.csv files (`results_viz --help` for options)
-
+BuildStock-Projections is run locally using a command line argument. Prior to running, make sure to follow the [installation instructions](./installation) and checkout a compatible version of the resstock repo (if running for residential buildings).
 
 ## Command Line Arguments
+We recommend setting up a [project configuration file](./inputs/project_cfg) first, and running `run_abm -y <path_to_my_file.yml>` to run a workflow. Alternatively, the arguments specified in a configuration file can also be passed directly to the `run_abm` command, described in `run_abm --help` output:
+
 
 ```console
 usage: run_abm [-h] [-z HORIZON] [-t TIMESTEP] [-b BUILDSTOCK_PATH]
@@ -53,8 +44,3 @@ options:
   -y Y                  Filepath to yml input.
 
 ```
-
-## Development
-- to build docs, install jupyter-book and run `jupyter-book build docs`
-- to run tests...
-- to run pre-commit hooks
