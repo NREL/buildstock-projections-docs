@@ -1,4 +1,4 @@
-# Projected Building Inputs
+# Future Building Options
 At each timestep, building stock inputs can be updated for the existing stock and/or the set of new construction buildings with the use of a common .csv file convention. We provide example files for new construction (ResStock and ComStock) [here](https://github.com/NREL/buildstock-projections/tree/main/resources/inputs), while more complex test files for [existing](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/existing) and [new construction](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/new_construction) ResStock buildings can be found in the [tests](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA) directory. The goal of these inputs are to change specific options for future building stock states.
 
 ## Package Apply File
