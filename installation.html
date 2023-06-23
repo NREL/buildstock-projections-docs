@@ -377,6 +377,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock">ResStock</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
 </ul>
             </nav>
         </div>
@@ -396,13 +397,28 @@ document.write(`
 <ul class="simple">
 <li><p>Clone the <a class="reference external" href="https://github.com/NREL/buildstock-projections">buildstock-projections repo</a></p></li>
 <li><p>Create &amp; activate your favorite venv in the repo (I prefer pyenv for <a class="reference external" href="https://github.com/pyenv/pyenv#installation">mac/linux</a> or <a class="reference external" href="https://github.com/pyenv-win/pyenv-win#installation">windows</a>, and the <a class="reference external" href="https://github.com/pyenv/pyenv-virtualenv">virtualenv plugin</a>)</p></li>
-<li><p>run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span> <span class="pre">--user</span></code></p></li>
+<li><p>run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span> <span class="pre">--user</span></code></p></li>
 <li><p>If running for ResStock, clone the <a class="reference external" href="https://github.com/NREL/resstock">resstock repo</a></p></li>
 </ul>
 <section id="resstock">
 <h3>ResStock<a class="headerlink" href="#resstock" title="Permalink to this heading">#</a></h3>
 <p>If running projections for ResStock, a local ResStock checkout is required to enable sampling of housing characteristics. Any version of ResStock should be compatible with BuildStock-Projections so long as the initial buildstock.csv aligns with the checked out version.</p>
 </section>
+</section>
+<section id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Developers should install the library in editable mode: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span> <span class="pre">--user</span></code></p></li>
+<li><p>Activate pre-commit (only once, after making a new venv) with <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">install</span></code></p>
+<ul>
+<li><p>Runs automatically on your staged changes before every commit</p></li>
+<li><p>Settings and documentation links for pre-commit and ruff are in .pre-commit-config.yaml and pyproject.toml</p></li>
+<li><p>To check all files, run <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">run</span> <span class="pre">--all-files</span></code></p></li>
+</ul>
+</li>
+<li><p>Documentation will not build until there is a push to <code class="docutils literal notranslate"><span class="pre">main</span></code>, to view your updates to documentation as a Jupyter Book, install <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> and run <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">docs</span></code> from the parent directory.</p></li>
+<li><p>Pytest is used for unit testing, run <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">.</span></code> to run them.</p></li>
+</ul>
 </section>
 </section>
 
@@ -477,6 +493,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resstock">ResStock</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
 </ul>
   </nav></div>
 

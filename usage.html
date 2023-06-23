@@ -373,9 +373,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-old-readme">FROM OLD README:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command Line Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
 </ul>
             </nav>
         </div>
@@ -389,25 +387,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="running-the-workflow">
 <h1>Running the Workflow<a class="headerlink" href="#running-the-workflow" title="Permalink to this heading">#</a></h1>
-<p>… how to run the workflow</p>
-<ul class="simple">
-<li><p>checkout your branch of resstock…\</p></li>
-</ul>
-<section id="from-old-readme">
-<h2>FROM OLD README:<a class="headerlink" href="#from-old-readme" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Detailed documentation to help you start can be found <span class="xref myst">here</span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">run_ABM</span></code> in the terminal to run the workflow and generate future buildstock.csv files (<code class="docutils literal notranslate"><span class="pre">run_ABM</span> <span class="pre">--help</span></code> for options)</p>
-<ul>
-<li><p>Ensure your local checkout of resstock (the resstock project_directory) matches the initial buildstock version, currently v3.0.0 in resources/project_national.yml</p></li>
-<li><p>Ensure the resources/options_lookup.tsv file is from the same version of resstock as well</p></li>
-</ul>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">results_viz</span></code> in the terminal to generate figures using the projected buildstock.csv files (<code class="docutils literal notranslate"><span class="pre">results_viz</span> <span class="pre">--help</span></code> for options)</p></li>
-</ul>
-</section>
+<p>BuildStock-Projections is run locally using a command line argument. Prior to running, make sure to follow the <a class="reference internal" href="installation.html"><span class="doc std std-doc">installation instructions</span></a> and checkout a compatible version of the resstock repo (if running for residential buildings).</p>
 <section id="command-line-arguments">
 <h2>Command Line Arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">#</a></h2>
+<p>We recommend setting up a <a class="reference internal" href="inputs/project_cfg.html"><span class="doc std std-doc">project configuration file</span></a> first, and running <code class="docutils literal notranslate"><span class="pre">run_abm</span> <span class="pre">-y</span> <span class="pre">&lt;path_to_my_file.yml&gt;</span></code> to run a workflow. Alternatively, the arguments specified in a configuration file can also be passed directly to the <code class="docutils literal notranslate"><span class="pre">run_abm</span></code> command, described in <code class="docutils literal notranslate"><span class="pre">run_abm</span> <span class="pre">--help</span></code> output:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">usage: run_abm [-h] [-z HORIZON] [-t TIMESTEP] [-b BUILDSTOCK_PATH]</span>
 <span class="go">               [--write_buildstocks] [--write_results_summary]</span>
 <span class="go">               [--input_filepath_population INPUT_FILEPATH_POPULATION]</span>
@@ -446,14 +429,6 @@ document.write(`
 <span class="go">  -y Y                  Filepath to yml input.</span>
 </pre></div>
 </div>
-</section>
-<section id="development">
-<h2>Development<a class="headerlink" href="#development" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>to build docs, install jupyter-book and run <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">docs</span></code></p></li>
-<li><p>to run tests…</p></li>
-<li><p>to run pre-commit hooks</p></li>
-</ul>
 </section>
 </section>
 
@@ -524,9 +499,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-old-readme">FROM OLD README:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command Line Arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
 </ul>
   </nav></div>
 

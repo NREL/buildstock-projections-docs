@@ -381,6 +381,11 @@ document.write(`
 <ul class="simple">
 <li><p>This library contains example buildstocks for <span class="xref myst">ResStock</span> v3.0.0 and <span class="xref myst">ComStock</span> are in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources">resources</a> folder.</p></li>
 <li><p>If you want to build your own buildstock files you may use <a class="reference external" href="https://github.com/NREL/resstock/blob/develop/resources/run_sampling.rb">this cli</a> from ResStock. Ensure the version of ResStock you use to generate that file matches the options_lookup file and the building inputs files.</p></li>
+<li><p>To confirm the buildstock files generated from this library are compatible with ResStock, check out ResStock <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch, move into the <code class="docutils literal notranslate"><span class="pre">test</span></code> dir, and call <code class="docutils literal notranslate"><span class="pre">ruby</span> <span class="pre">check_buildstock.rb</span> <span class="pre">-h</span></code> for details on further commands the check needs to operate correctly</p>
+<ul>
+<li><p>Check_buildstock cannot read compressed files, so be sure to unzip the outputs first</p></li>
+</ul>
+</li>
 </ul>
 <p>A custom <code class="docutils literal notranslate"><span class="pre">options_lookup.tsv</span></code> located in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources">resources</a> directory is also needed for ResStock. To pass the validation checks when running ResStock, the file must be compatible with the inputted buildstock.csv and all future vintages must be added, for example:</p>
 <table class="table">
