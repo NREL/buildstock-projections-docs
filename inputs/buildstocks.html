@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'inputs/buildstocks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Projected Building Inputs" href="building_options.html" />
+    <link rel="next" title="Future Building Options" href="building_options.html" />
     <link rel="prev" title="Population" href="population.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -158,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="project_cfg.html">Project Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="population.html">Population</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">BuildStock Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building_options.html">Projected Building Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_options.html">Future Building Options</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">Running the Workflow</a></li>
@@ -382,7 +382,7 @@ document.write(`
 <li><p>This library contains example buildstocks for <span class="xref myst">ResStock</span> v3.0.0 and <span class="xref myst">ComStock</span> are in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources">resources</a> folder.</p></li>
 <li><p>If you want to build your own buildstock files you may use <a class="reference external" href="https://github.com/NREL/resstock/blob/develop/resources/run_sampling.rb">this cli</a> from ResStock. Ensure the version of ResStock you use to generate that file matches the options_lookup file and the building inputs files.</p></li>
 </ul>
-<p>A custom options_lookup.csv located in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources">resources</a> directory is also needed for ResStock. To pass the validation checks when running ResStock, the file must be compatible with the inputted buildstock.csv and all future vintages must be added, for example:</p>
+<p>A custom <code class="docutils literal notranslate"><span class="pre">options_lookup.tsv</span></code> located in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources">resources</a> directory is also needed for ResStock. To pass the validation checks when running ResStock, the file must be compatible with the inputted buildstock.csv and all future vintages must be added, for example:</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter Name</p></th>
@@ -451,7 +451,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Projected Building Inputs</p>
+        <p class="prev-next-title">Future Building Options</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

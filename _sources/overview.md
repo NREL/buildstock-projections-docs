@@ -54,7 +54,7 @@ The new construction module calculates the number of new units or buildings that
 2. **Sample New Construction**: Constraints limiting the PUMA, building type, and floor area are applied to the building stock and one building is sampled for each unique combination of those inputs. If no building exists, the floor area constraint is relaxed to allow for any size building to be sampled.
 3. **Apply Building Options**: Characteristics of the sampled buildings are updated based on user inputs, as described in the next section.
    
-## Building Options (New Construction & Existing)[<sup>🔗</sup>](https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/stock.py)
+## Building Options Specification (New Construction & Existing)[<sup>🔗</sup>](https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/stock.py)
 In each projection year, users can define a set up options that are applied to new construction and options applied to the existing set of buildings. Options applied to new construction can often be thought of as future energy code and equipment standards, while options applied to the existing stock may represent technology turnover or energy efficiency and equipment upgrades. Both the new and existing scenarios use the same format for inputs, and may be applied to subsets of the stock by using an adoption rate or housing characteristic filters, as further described in the [Projected Building Inputs](./inputs/building_options) section. 
 
 ## Results Visualization and Outputs [<sup>🔗</sup>](https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/results_viz.py)
@@ -78,3 +78,4 @@ There exists limitations in the current model to be addressed in the future:
 - ResStock sampling: the ResStock sampler can be called, however both PUMA and vintage cannot be applied to constrain the sampler, and therefore only PUMA is downselected and any vintage may be sampled (instead of just new buildings)
 - ComStock sampling: the ComStock sampler cannot be called, and therefore sampling is performed only with the existing building stock
 - Technology turnover can be modeled using an adoption rate, but cannot not depend on existing age of technologies
+- Final buildstock outputs may have inconsistencies between options. Because users can independently update options to the buildstock, existing options may not be updated to ensure compatibility, which could potentially introduce breaking changes.

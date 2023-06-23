@@ -160,7 +160,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="inputs/project_cfg.html">Project Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inputs/population.html">Population</a></li>
 <li class="toctree-l2"><a class="reference internal" href="inputs/buildstocks.html">BuildStock Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="inputs/building_options.html">Projected Building Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/building_options.html">Future Building Options</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Running the Workflow</a></li>
@@ -380,7 +380,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demolition-sup-sup">Demolition <sup>🔗</sup></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacancy-sup-sup">Vacancy <sup>🔗</sup></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction-sup-sup">New Construction <sup>🔗</sup></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-options-new-construction-existing-sup-sup">Building Options (New Construction &amp; Existing)<sup>🔗</sup></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-options-specification-new-construction-existing-sup-sup">Building Options Specification (New Construction &amp; Existing)<sup>🔗</sup></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-visualization-and-outputs-sup-sup">Results Visualization and Outputs <sup>🔗</sup></a></li>
 </ul>
 </li>
@@ -487,8 +487,8 @@ document.write(`
 <li><p><strong>Apply Building Options</strong>: Characteristics of the sampled buildings are updated based on user inputs, as described in the next section.</p></li>
 </ol>
 </section>
-<section id="building-options-new-construction-existing-sup-sup">
-<h2>Building Options (New Construction &amp; Existing)<a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/stock.py"><sup>🔗</sup></a><a class="headerlink" href="#building-options-new-construction-existing-sup-sup" title="Permalink to this heading">#</a></h2>
+<section id="building-options-specification-new-construction-existing-sup-sup">
+<h2>Building Options Specification (New Construction &amp; Existing)<a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/stock.py"><sup>🔗</sup></a><a class="headerlink" href="#building-options-specification-new-construction-existing-sup-sup" title="Permalink to this heading">#</a></h2>
 <p>In each projection year, users can define a set up options that are applied to new construction and options applied to the existing set of buildings. Options applied to new construction can often be thought of as future energy code and equipment standards, while options applied to the existing stock may represent technology turnover or energy efficiency and equipment upgrades. Both the new and existing scenarios use the same format for inputs, and may be applied to subsets of the stock by using an adoption rate or housing characteristic filters, as further described in the <a class="reference internal" href="inputs/building_options.html"><span class="doc std std-doc">Projected Building Inputs</span></a> section.</p>
 </section>
 <section id="results-visualization-and-outputs-sup-sup">
@@ -518,6 +518,7 @@ Results visualization can be run as a separate post-processing step to help user
 <li><p>ResStock sampling: the ResStock sampler can be called, however both PUMA and vintage cannot be applied to constrain the sampler, and therefore only PUMA is downselected and any vintage may be sampled (instead of just new buildings)</p></li>
 <li><p>ComStock sampling: the ComStock sampler cannot be called, and therefore sampling is performed only with the existing building stock</p></li>
 <li><p>Technology turnover can be modeled using an adoption rate, but cannot not depend on existing age of technologies</p></li>
+<li><p>Final buildstock outputs may have inconsistencies between options. Because users can independently update options to the buildstock, existing options may not be updated to ensure compatibility, which could potentially introduce breaking changes.</p></li>
 </ul>
 </section>
 
@@ -593,7 +594,7 @@ Results visualization can be run as a separate post-processing step to help user
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demolition-sup-sup">Demolition <sup>🔗</sup></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vacancy-sup-sup">Vacancy <sup>🔗</sup></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-construction-sup-sup">New Construction <sup>🔗</sup></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-options-new-construction-existing-sup-sup">Building Options (New Construction &amp; Existing)<sup>🔗</sup></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-options-specification-new-construction-existing-sup-sup">Building Options Specification (New Construction &amp; Existing)<sup>🔗</sup></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results-visualization-and-outputs-sup-sup">Results Visualization and Outputs <sup>🔗</sup></a></li>
 </ul>
 </li>

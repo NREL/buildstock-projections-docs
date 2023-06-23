@@ -53,3 +53,8 @@ options:
   -y Y                  Filepath to yml input.
 
 ```
+
+## Development
+- to build docs, install jupyter-book and run `jupyter-book build docs`
+- to run tests...
+- to run pre-commit hooks
