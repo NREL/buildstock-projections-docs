@@ -398,7 +398,7 @@ document.write(`
 <ul class="simple">
 <li><p><strong>buildstock.csvs</strong> (<em>optional</em>): a buildstock csv for each projection year; optional output that is specied during <a class="reference internal" href="inputs/project_cfg.html"><span class="doc std std-doc">project configuration</span></a></p></li>
 <li><p><strong>results_summary</strong> (<em>optional</em>): a summary of the buildstocks aggregated at each year; optional output that is specied during <a class="reference internal" href="inputs/project_cfg.html"><span class="doc std std-doc">project configuration</span></a></p></li>
-<li><p><strong>upgrade reports</strong>: Summaries of building options applied to existing and/or new construction buildings, describes the actual adoption rate and percentage of total stock to which an option is applied. One file is output for each year and existing/new construction distinction.</p></li>
+<li><p><strong>upgrade reports</strong>: Summaries of building options applied to existing and/or new construction buildings describing the actual adoption rate and percentage of total stock to which an option is applied. One file is output for each year and existing/new construction distinction.</p></li>
 </ul>
 <section id="results-summary">
 <h3>Results Summary<a class="headerlink" href="#results-summary" title="Permalink to this heading">#</a></h3>
@@ -419,7 +419,7 @@ document.write(`
 </section>
 <section id="upgrade-reports">
 <h3>Upgrade Reports<a class="headerlink" href="#upgrade-reports" title="Permalink to this heading">#</a></h3>
-<p>Upgrade reports are designed to help users understand how building option speicifications for new construction and existing buildings are applied. These files are particularly important to review for options applied with adoption rates &lt; 1 and/or there are extensive housing characteristics filters applied.</p>
+<p>Upgrade reports are designed to help users understand how building option specifications for new construction and existing buildings are applied. These files are particularly important to review for options with adoption rates &lt; 1 and/or extensive housing characteristics filters.</p>
 <p>These reports are similar to the building option specification files, but have additional columns and are organized differently. Firstly, there is one file for each year and existing/new construction distinction, aggregating what could be numerous option files (i.e., packages) into one file that shows the options applied in that year. Columns added to these reports that are not in the input files include “Package”, “Percent of stock applied”, “Desired adoption rate”, and “Actual adoption rate”, as shown in the example table below.</p>
 <table class="table">
 <thead>
@@ -477,12 +477,12 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>The desired adoption rate reflects the inputted value, while the actual indicates what percentage of the building subset the option was actually applied to. These numbers differ because options are applied to a discrete number of rows, and perfectly meeting the adoption rate is generally not possible. The percent of stock applied refers to the percentage of the entire building stock that the option is applied, if there are no housing characteristics filters applied, than this number will be the same as the actual adoption rate.</p>
+<p>The desired adoption rate reflects the inputted value, while the actual indicates what percentage of the building subset the option was actually applied to. These numbers differ because options are applied to a discrete number of rows, and perfectly meeting the adoption rate is typically not possible. The percent of stock applied refers to the percentage of the entire building stock that the option is applied, if there are no housing characteristics filters, then this number will be the same as the actual adoption rate.</p>
 </section>
 </section>
 <section id="vizualization">
 <h2>Vizualization<a class="headerlink" href="#vizualization" title="Permalink to this heading">#</a></h2>
-<p>Results visualization can be run as a separate post-processing step to help users understand the outputs of our workflow. In order to run visualizations, either a results summary or the buildstocks must be output during the main buildstock-projections run. Use the <code class="docutils literal notranslate"><span class="pre">results_viz</span></code> command in the terminal to generate figures (<code class="docutils literal notranslate"><span class="pre">results_viz</span> <span class="pre">--help</span></code> for options)</p>
+<p>Results visualization can be run as a separate post-processing step to help users understand the outputs of the workflow. In order to run visualizations, either a results summary file or the buildstock.csvs must be output during the buildstock-projections run. Use the <code class="docutils literal notranslate"><span class="pre">results_viz</span></code> command in the terminal to generate figures (<code class="docutils literal notranslate"><span class="pre">results_viz</span> <span class="pre">--help</span></code> for options)</p>
 <ul class="simple">
 <li><p><strong>Building counts</strong>: output by occupancy status and projected year</p></li>
 <li><p><strong>Age counts</strong>: output by building age bin and projected year</p></li>
