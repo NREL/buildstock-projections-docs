@@ -1,5 +1,5 @@
 # Future Building Options
-At each timestep, building stock inputs can be updated for the existing stock and/or the set of new construction buildings with the use of a common .csv file convention. We provide example files for new construction (ResStock and ComStock) [here](https://github.com/NREL/buildstock-projections/tree/main/resources/inputs), while more complex test files for [existing](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/existing) and [new construction](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/new_construction) ResStock buildings can be found in the [tests](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA) directory. The goal of these inputs are to change specific options for future building stock states.
+At each timestep, building stock inputs can be updated for the existing stock and/or the set of new construction buildings with the use of a common file format stored as .csvs. We provide example files for new construction (ResStock and ComStock) [here](https://github.com/NREL/buildstock-projections/tree/main/resources/inputs), while more complex test files for [existing](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/existing) and [new construction](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/new_construction) ResStock buildings can be found in the [tests](https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA) directory. The goal of these inputs are to change specific options for future building stock states.
 
 ## Package Apply File
 Both new construction and existing inputs may include a package_apply file as a way to help organize inputs and specify in which years packages get applied. The following columns are used to specify how packages are applied, all other column headers will be ignored:
@@ -9,7 +9,7 @@ Both new construction and existing inputs may include a package_apply file as a 
 `Housing Characteristics <n>`: *(optional)*: characteristics by which to filter the building stock before applying the package. Any number of Housing Characteristics columns can be included (1..n) and the filters follow the convention `Parameter||Option 1|Option 2|...|Option n`.
 
 
-The example below demonstrates how this might be applied to set future code levels by state for new construction homes; here there are four different code packages that get applied in 2025 differently ddepending on the state.
+The example below demonstrates how this might be applied to set future code levels by state for new construction homes; here there are four different code packages that get applied in 2025 depending on the state.
 
 | Year        | Package Apply    | Housing Characteristics 1   | 
 | ----------- | ----------- | -----------       | 

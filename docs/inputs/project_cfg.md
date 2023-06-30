@@ -41,12 +41,12 @@ resstock:
 `buildstock_path` (str): filepath to the baseline ResStock buildstock.csv; can be an absolute or relative path.      
 `project_directory` (str):  ResStock project directory path that contains `housing_characteristics/` and `options_lookup.tsv`; can be an absolute or relative path.   
 `input_filepath_new_construction` (str): directory containing future year building options to be applied to new construction buildings, such as future energy codes; can be an absolute or relative path.   
-`input_filepath_existing` (*optional*) (str): directory containing future year building options to be applied to existing buildings; can be an absolute or relative path. 
+`input_filepath_existing` (*optional*) (str): directory containing future year building options to be applied to existing buildings; can be an absolute or relative path.   
 `geo_resolution` (*optional*) (str): **Not implemented**. Specify the geographic resolution at which modules are run. Default="PUMA"
 ### ComStock Configuation
 `buildstock_path`: filepath to the baseline ComStock buildstock.csv; can be absolute or realtive.      
 `input_filepath_new_construction` (str): directory containing future year building options to be applied to new construction buildings, such as future energy codes; can be an absolute or relative path.   
-`input_filepath_existing` (*optional*) (str): directory containing future year building options to be applied to existing buildings; can be an absolute or relative path. 
+`input_filepath_existing` (*optional*) (str): directory containing future year building options to be applied to existing buildings; can be an absolute or relative path.   
 `geo_resolution` (*optional*) (str): **Not implemented**. Specify the geographic resolution at which modules are run. Default="PUMA"
 
 ## Command Line
