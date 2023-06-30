@@ -58,17 +58,7 @@ The new construction module calculates the number of new units or buildings that
 In each projection year, users can define a set up options that are applied to new construction and options applied to the existing set of buildings. Options applied to new construction can often be thought of as future energy code and equipment standards, while options applied to the existing stock may represent technology turnover or energy efficiency and equipment upgrades. Both the new and existing scenarios use the same format for inputs, and may be applied to subsets of the stock by using an adoption rate or housing characteristic filters, as further described in the [Projected Building Inputs](./inputs/building_options) section. 
 
 ## Results Visualization and Outputs [<sup>🔗</sup>](https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/results_viz.py)
-**Outputs** - Several types of outputs can be retrieved from the workflow:
-- **buildstock.csvs** (*optional*): a buildstock csv for each projection year
-- **results_summary** (*optional*): a summary of the buildstocks aggregated at each year
-- **upgrade reports**: Summaries of building options applied to existing and/or new construction buildings, describes the actual adoption rate and percentage of total stock to which an option is applied. One file is output for each year and existing/new construction distinction. 
-
-**Results Visualization**  
-Results visualization can be run as a separate post-processing step to help users understand the outputs of our workflow. In order to run visualizations, either a results summary or the buildstocks must be output during the main buildstock-projections run.  
-- **Building counts**: output by occupancy status and projected year
-- **Age counts**: output by building age bin and projected year
-- **Housing parameters**: with a user-specified list of parameters, outputs one plot for each parameter showing the fraction homes with each option across all projection years
-
+Output files are either automatically generated or specified during project configuration, and visualization are run as a post-processing step to help users understand the projection results. More information on these outputs and how to generate them can be found in the [Outputs and Vizualizations](./outputs) section.
 
 # Limitations
 There exists limitations in the current model to be addressed in the future:
