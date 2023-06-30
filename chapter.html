@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Outputs and Vizualizations &#8212; BuildStock Projections Documentation</title>
+    <title>A chapter &#8212; BuildStock Projections Documentation</title>
   
   
   
@@ -61,9 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'outputs';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Overview" href="overview/overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -148,9 +149,9 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="overview/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter.html">A chapter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A chapter</a></li>
 </ul>
 
     </div>
@@ -222,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NREL/buildstock-projections/edit/main/docs/outputs.md" target="_blank"
+      <li><a href="https://github.com/NREL/buildstock-projections/edit/main/docs/chapter.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -239,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NREL/buildstock-projections/issues/new?title=Issue%20on%20page%20%2Foutputs.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NREL/buildstock-projections/issues/new?title=Issue%20on%20page%20%2Fchapter.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -269,7 +270,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/outputs.md" target="_blank"
+      <li><a href="_sources/chapter.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,9 +339,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -351,24 +350,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Outputs and Vizualizations</h1>
+    <h1>A chapter</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results-summary">Results Summary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-reports">Upgrade Reports</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vizualization">Vizualization</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -378,106 +364,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="outputs-and-vizualizations">
-<h1>Outputs and Vizualizations<a class="headerlink" href="#outputs-and-vizualizations" title="Permalink to this heading">#</a></h1>
-<p>Output files from the workflow can be specified at run time, while visualizations can be generated with a post-processing script using the output files. Output files are always saved to the directory <code class="docutils literal notranslate"><span class="pre">./outputs</span></code>.</p>
-<section id="output-files">
-<h2>Output Files<a class="headerlink" href="#output-files" title="Permalink to this heading">#</a></h2>
-<p>Several types of outputs can be retrieved from the workflow:</p>
-<ul class="simple">
-<li><p><strong>buildstock.csvs</strong> (<em>optional</em>): a buildstock csv for each projection year; optional output that is specied during <a class="reference internal" href="inputs/project_cfg.html"><span class="doc std std-doc">project configuration</span></a></p></li>
-<li><p><strong>results_summary</strong> (<em>optional</em>): a summary of the buildstocks aggregated at each year; optional output that is specied during <a class="reference internal" href="inputs/project_cfg.html"><span class="doc std std-doc">project configuration</span></a></p></li>
-<li><p><strong>upgrade reports</strong>: Summaries of building options applied to existing and/or new construction buildings describing the actual adoption rate and percentage of total stock to which an option is applied. One file is output for each year and existing/new construction distinction.</p></li>
-</ul>
-<section id="results-summary">
-<h3>Results Summary<a class="headerlink" href="#results-summary" title="Permalink to this heading">#</a></h3>
-<p>If specified, results_summary.csv files can be output for ResStock and ComStock that aggregates a select set of outputs by year. The following oclumns are included:</p>
-<ul class="simple">
-<li><p><em>Year</em>: projection year</p></li>
-<li><p><em>Population</em>: total population, aligns with <a class="reference internal" href="inputs/population.html"><span class="doc std std-doc">population inputs</span></a></p></li>
-<li><p><em>Demolished</em>: count of units or buildings demolished in that year</p></li>
-<li><p><em>Vacancy rate</em>: final vacancy rate that meets the population constraints (ResStock only)</p></li>
-<li><p><em>Desired Vacancy Change</em>: desired vacancy rate output from the vacancy module (ResStock only)</p></li>
-<li><p><em>Final Vacancy Change</em>: final count units that change from occupied to vacant (ResStock only)</p></li>
-<li><p><em>New Construction Occupied</em>: number of new units occupied (ResStock only)</p></li>
-<li><p><em>Vacant</em>: number of vacant units (ResStock only)</p></li>
-<li><p><em>Total buildings</em>: total number of housing units or buildings</p></li>
-<li><p><em>Cumulative demolished</em>: sum of units or buildings demolished from the first year</p></li>
-<li><p><em>age_&lt;yr1&gt;_&lt;yr2&gt;</em>: number of units or buildings that belong to the age bin (yr1, yr2)</p></li>
-</ul>
-</section>
-<section id="upgrade-reports">
-<h3>Upgrade Reports<a class="headerlink" href="#upgrade-reports" title="Permalink to this heading">#</a></h3>
-<p>Upgrade reports are designed to help users understand how building option specifications for new construction and existing buildings are applied. These files are particularly important to review for options with adoption rates &lt; 1 and/or extensive housing characteristics filters.</p>
-<p>These reports are similar to the building option specification files, but have additional columns and are organized differently. Firstly, there is one file for each year and existing/new construction distinction, aggregating what could be numerous option files (i.e., packages) into one file that shows the options applied in that year. Columns added to these reports that are not in the input files include “Package”, “Percent of stock applied”, “Desired adoption rate”, and “Actual adoption rate”, as shown in the example table below.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Package</p></th>
-<th class="head"><p>Parameter</p></th>
-<th class="head"><p>Option</p></th>
-<th class="head"><p>Parameter Category</p></th>
-<th class="head"><p>Percent of stock applied</p></th>
-<th class="head"><p>Desired adoption rate</p></th>
-<th class="head"><p>Actual adoption rate</p></th>
-<th class="head"><p>Housing Characteristics 1</p></th>
-<th class="head"><p>Housing Characteristics 2</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>iecc_2018</p></td>
-<td><p>Insulation Floor</p></td>
-<td><p>Ceiling R-13</p></td>
-<td><p>Foundation</p></td>
-<td><p>3.48E-05</p></td>
-<td><p>0.05</p></td>
-<td><p>0.05714</p></td>
-<td><p>ASHRAE IECC Climate Zone 2004||[‘1A’, ‘2A’, ‘2B’]</p></td>
-<td><p>Geometry Foundation Type||[‘Vented Crawlspace’, ‘Unheated Basement’, ‘Ambient’]</p></td>
-</tr>
-<tr class="row-odd"><td><p>iecc_2018</p></td>
-<td><p>Insulation Floor</p></td>
-<td><p>Ceiling R-19</p></td>
-<td><p>Foundation</p></td>
-<td><p>0.0189</p></td>
-<td><p>0.05</p></td>
-<td><p>0.05002</p></td>
-<td><p>ASHRAE IECC Climate Zone 2004||[‘3A’, ‘3B’, ‘3C’, ‘4A’, ‘4B’]</p></td>
-<td><p>Geometry Foundation Type||[‘Vented Crawlspace’, ‘Unheated Basement’, ‘Ambient’]</p></td>
-</tr>
-<tr class="row-even"><td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-</tr>
-<tr class="row-odd"><td><p>CFR_2021</p></td>
-<td><p>HVAC Cooling Efficiency</p></td>
-<td><p>AC, SEER 14</p></td>
-<td><p>HVAC Cooling</p></td>
-<td><p>0.4498</p></td>
-<td><p>1.0</p></td>
-<td><p>1.0</p></td>
-<td><p>HVAC Cooling Type||[‘Central AC’]</p></td>
-<td><p>HVAC Has Shared System||[‘None’, ‘Heating Only’]</p></td>
-</tr>
-</tbody>
-</table>
-<p>The desired adoption rate reflects the inputted value, while the actual indicates what percentage of the building subset the option was actually applied to. These numbers differ because options are applied to a discrete number of rows, and perfectly meeting the adoption rate is typically not possible. The percent of stock applied refers to the percentage of the entire building stock that the option is applied, if there are no housing characteristics filters, then this number will be the same as the actual adoption rate.</p>
-</section>
-</section>
-<section id="vizualization">
-<h2>Vizualization<a class="headerlink" href="#vizualization" title="Permalink to this heading">#</a></h2>
-<p>Results visualization can be run as a separate post-processing step to help users understand the outputs of the workflow. In order to run visualizations, either a results summary file or the buildstock.csvs must be output during the buildstock-projections run. Use the <code class="docutils literal notranslate"><span class="pre">results_viz</span></code> command in the terminal to generate figures (<code class="docutils literal notranslate"><span class="pre">results_viz</span> <span class="pre">--help</span></code> for options)</p>
-<ul class="simple">
-<li><p><strong>Building counts</strong>: output by occupancy status and projected year</p></li>
-<li><p><strong>Age counts</strong>: output by building age bin and projected year</p></li>
-<li><p><strong>Housing parameters</strong>: with a user-specified list of parameters, outputs one plot for each parameter showing the fraction homes with each option across all projection years</p></li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="a-chapter">
+<h1>A chapter<a class="headerlink" href="#a-chapter" title="Permalink to this heading">#</a></h1>
+<p>A chapter in the documentation</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -511,6 +400,15 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="overview/overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overview</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -520,25 +418,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output Files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results-summary">Results Summary</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-reports">Upgrade Reports</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vizualization">Vizualization</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
