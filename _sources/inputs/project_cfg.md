@@ -29,11 +29,11 @@ resstock:
 `timestep` (*optional*) (int): The time interval in years at which the workflow runs.  
 &nbsp;&nbsp;&nbsp;&nbsp;**Units**: year, **Default**=5  
 `print_statements` (*optional*) (bool): print timestep-level details to the terminal.  
-&nbsp;&nbsp;&nbsp;&nbsp;**Default**=True  
+&nbsp;&nbsp;&nbsp;&nbsp;**Default**=False  
 `write_buildstocks` (*optional*) (bool): write the buildstock.csvs for each timestep to buildstock-projections/outputs.  
-&nbsp;&nbsp;&nbsp;&nbsp;**Default**=True  
+&nbsp;&nbsp;&nbsp;&nbsp;**Default**=False  
 `write_results_summary` (*optional*) (bool): write a csv file summarizing various outputs as detailed in the [outputs](../outputs) section.  
-&nbsp;&nbsp;&nbsp;&nbsp;**Default**=True  
+&nbsp;&nbsp;&nbsp;&nbsp;**Default**=False  
 `input_filepath_population` (*optional*) (str): path to population input files  
 &nbsp;&nbsp;&nbsp;&nbsp;**Default**='buildstockprojections/resources/inputs/population'  
 `stock_type (resstock/comstock)`: configuration file must contain at least a `comstock` or a `resstock` block, described below. 

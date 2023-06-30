@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'readme';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Overview" href="overview/overview.html" />
+    <link rel="next" title="Overview and Methodology" href="overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -145,13 +145,23 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    BuildStock Projections
+                    BuildStock Projections 
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="overview/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter.html">A chapter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview and Methodology</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inputs/inputs.html">Inputs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inputs/project_cfg.html">Project Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/population.html">Population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/buildstocks.html">BuildStock Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/building_options.html">Future Building Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Running the Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">Outputs and Vizualizations</a></li>
 </ul>
 
     </div>
@@ -350,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>BuildStock Projections</h1>
+    <h1>BuildStock Projections </h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,10 +374,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="buildstock-projections">
-<h1>BuildStock Projections<a class="headerlink" href="#buildstock-projections" title="Permalink to this heading">#</a></h1>
-<p>The buildstock-projections tool generates inputs to <a class="reference external" href="https://github.com/NREL/resstock">ResStock</a> and <a class="reference external" href="https://www.nrel.gov/buildings/comstock.html">ComStock</a> for use in simulation of future building stock scenarios.</p>
-<p>For more information on our methodology, installation, and running read the <a class="reference external" href="https://NREL.github.io/buildstock-projections-docs/readme.html">documentation</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="buildstock-projections-jupyter-book-badge">
+<h1>BuildStock Projections <a class="reference external" href="https://NREL.github.io/buildstock-projections-docs/"><img alt="Jupyter Book Badge" src="https://jupyterbook.org/badge.svg" /></a><a class="headerlink" href="#buildstock-projections-jupyter-book-badge" title="Permalink to this heading">#</a></h1>
+<p>*<strong><em>Warning</em>*: As of June 2023 this library is in beta and is not appropriate for production use.</strong></p>
+<p>This package is used to generate inputs to <a class="reference external" href="https://github.com/NREL/resstock">ResStock</a> and <a class="reference external" href="https://www.nrel.gov/buildings/comstock.html">ComStock</a> for use in simulation of future building stock scenarios. Building stock projections consider the influence of demolition, vacancy, new construction, future code, and existing stock technology turnover at the Public Use Microdata Area (PUMA) geographic resolution.</p>
+<p>The buildstock-projections tool receives numerous inputs to define baseline housing characteristics, future populations, and technology adoption, then outputs residential and/or commercial buildstock.csv input files corresponding with future years at pre-configured time intervals. These files can be used to simulate future building energy usage when run with <a class="reference external" href="https://github.com/NREL/buildstockbatch">BuildStockBatch</a> and future weather files (not provided in this repo).</p>
+<p>The target users of this tool are researchers with experience running ResStock and/or ComStock. If not already familiar, we recommend reading the respective documentation on these tools prior to running buildstock-projections.</p>
+<p>More information on methodology, installation, and running can be found in the <a class="reference external" href="https://NREL.github.io/buildstock-projections-docs">documentation</a></p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -404,11 +417,11 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
-       href="overview/overview.html"
+       href="overview.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Overview</p>
+        <p class="prev-next-title">Overview and Methodology</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
