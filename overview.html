@@ -493,19 +493,7 @@ document.write(`
 </section>
 <section id="results-visualization-and-outputs-sup-sup">
 <h2>Results Visualization and Outputs <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/results_viz.py"><sup>🔗</sup></a><a class="headerlink" href="#results-visualization-and-outputs-sup-sup" title="Permalink to this heading">#</a></h2>
-<p><strong>Outputs</strong> - Several types of outputs can be retrieved from the workflow:</p>
-<ul class="simple">
-<li><p><strong>buildstock.csvs</strong> (<em>optional</em>): a buildstock csv for each projection year</p></li>
-<li><p><strong>results_summary</strong> (<em>optional</em>): a summary of the buildstocks aggregated at each year</p></li>
-<li><p><strong>upgrade reports</strong>: Summaries of building options applied to existing and/or new construction buildings, describes the actual adoption rate and percentage of total stock to which an option is applied. One file is output for each year and existing/new construction distinction.</p></li>
-</ul>
-<p><strong>Results Visualization</strong><br />
-Results visualization can be run as a separate post-processing step to help users understand the outputs of our workflow. In order to run visualizations, either a results summary or the buildstocks must be output during the main buildstock-projections run.</p>
-<ul class="simple">
-<li><p><strong>Building counts</strong>: output by occupancy status and projected year</p></li>
-<li><p><strong>Age counts</strong>: output by building age bin and projected year</p></li>
-<li><p><strong>Housing parameters</strong>: with a user-specified list of parameters, outputs one plot for each parameter showing the fraction homes with each option across all projection years</p></li>
-</ul>
+<p>Output files are either automatically generated or specified during project configuration, and visualization are run as a post-processing step to help users understand the projection results. More information on these outputs and how to generate them can be found in the <a class="reference internal" href="outputs.html"><span class="doc std std-doc">Outputs and Vizualizations</span></a> section.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="limitations">

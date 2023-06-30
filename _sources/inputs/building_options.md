@@ -22,10 +22,10 @@ The example below demonstrates how this might be applied to set future code leve
 ## Building Option Specification Files
 At least one building option specification file, or "package", is required to describe what and how options are updated. The following columns are used to specify this, all other column headers will be ignored:
 
-`Parameter`: parameter to be updated change   
-`Option`:  specific option to which to change to.
-`Parameter Category`: a unique descriptor that groups together rows, all common parameters must have the same category, but multiple parameters can have the same category.
-`Adoption Rate`: The fraction of buildings that have that option applied (dependent on the Housing Characteristics columns).
+`Parameter`: the parameter to be changes   
+`Option`:  the specific option that will be updated (based on Housing Characteristics columns)
+`Parameter Category`: a unique descriptor that groups together rows, all common parameters must have the same category, but multiple parameters can belong to the same category.  
+`Adoption Rate`: The fraction of buildings that have that option applied (dependent on the Housing Characteristics columns).  
 `Housing Characeteristics <n>` *(optional)*: characteristics by which to filter the building stock before applying the package options. Any number of Housing Characteristics columns can be included (1..n) and the filters follow the convention `Parameter||Option 1|Option 2|...|Option n`.
 
 The example below demonstrates how a package may be used to define code minimum and above-code options for new construction buildings in ResStock. This file will apply ceiling insulation options based on the climate zone of a building, aligning with the 2009 IECC requirements. In this scenario, 75% of climate zone 4A-5B (w/ vented attics) have the R-38 code minimum insulation applied, while 25% of those climate zones receive an above-code R-49 insulation. Each row also specifies that these options only applied to homes with vented attics as the `Insulation Ceiling` option would be invalid for other home attic types. 
