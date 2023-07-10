@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="BuildStock Projections" href="readme.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -146,13 +148,23 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="readme.html">
-                    BuildStock Projections
+                    BuildStock Projections 
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="overview/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chapter.html">A chapter</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview and Methodology</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inputs/inputs.html">Inputs</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="inputs/project_cfg.html">Project Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/population.html">Population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/buildstocks.html">BuildStock Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inputs/building_options.html">Future Building Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Running the Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="outputs.html">Outputs and Vizualizations</a></li>
 </ul>
 
     </div>
@@ -387,7 +399,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="overview-and-methodology">
 <h1>Overview and Methodology<a class="headerlink" href="#overview-and-methodology" title="Permalink to this heading">#</a></h1>
-<p>The buildstock-projections library calculates future building counts and tenure status while also providing a mechanism for users to define code adoption and existing building technology adoption. This is accomplished through the modules described below. There are four steps that get repeated with each timestep in which operations are performed on the previous year’s buildstock. Modules are applied sequentially as:</p>
+<p>The buildstock-projections library calculates future building counts and tenure status (occupied/vacant) while also providing a mechanism for users to define code adoption and existing building technology adoption. This is accomplished through the modules described below. There are four steps that get repeated with each timestep in which operations are performed on the previous year’s buildstock. Modules are applied sequentially as:</p>
 <ol class="arabic simple">
 <li><p>Population Projections (prior to first timestep)</p></li>
 <li><p>Demolition (at each timestep)</p></li>
@@ -403,11 +415,11 @@ document.write(`
 </ol>
 <section id="population-projections-sup-sup">
 <h2>Population Projections <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/population_estimate.py"><sup>🔗</sup></a><a class="headerlink" href="#population-projections-sup-sup" title="Permalink to this heading">#</a></h2>
-<p>The population module imports population projection inputs and applies a regression to infer missing data.This module runs prior to iterating through projection years and the outputs inform other modules. Inputs for the population module include baseline population data by PUMA, and population data for at least one future year. A 2nd order polynomial regression is applied to the input data to infer PUMA populations for timesteps in which there is no data. An example for one PUMA is shown below, where the population inputs are provided for 2020, 2030, and 2050.</p>
+<p>The population module imports population projection inputs and applies a regression to infer missing data. This module runs prior to iterating through projection years and the outputs inform other modules. Inputs for the population module include baseline population data by PUMA, and population data for at least one future year. A 2nd order polynomial regression is applied to the input data to infer PUMA populations for timesteps in which there is no data. An example for one PUMA is shown below, where the population inputs are provided for 2020, 2030, and 2050.</p>
 <figure class="align-default" id="population-fig">
 <a class="bg-primary mb-1 reference internal image-reference" href="_images/population_projection_example.png"><img alt="_images/population_projection_example.png" class="bg-primary mb-1" src="_images/population_projection_example.png" style="width: 500px; height: 500px;" /></a>
 <figcaption>
-<p><span class="caption-text">Demonstration of the population regression for a single PUMA. Known datapoints include 2020, 2030, and 2050.</span><a class="headerlink" href="#population-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Demonstration of the population regression for a single PUMA. Known datapoints include 2020, 2030, and 2050.</span><a class="headerlink" href="#population-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Documentation regarding input files for population can be found <a class="reference internal" href="inputs/population.html"><span class="doc std std-doc">here</span></a></p>
@@ -460,7 +472,7 @@ document.write(`
 </section>
 <section id="new-construction-sup-sup">
 <h2>New Construction <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/new_construction.py"><sup>🔗</sup></a><a class="headerlink" href="#new-construction-sup-sup" title="Permalink to this heading">#</a></h2>
-<p>The new construction module calculates the number of new units or buildings that should be added in a timestep, then samples to generate new buildstock samples. Additionally, the building options module is called to update the new construction and existing options, and the vacant units are scaled to ensure that the desired population projection is met. The steps for new construction differ for ResStock and ComStock:</p>
+<p>The new construction module calculates the number of new units or buildings that should be added in a timestep, then samples to generate new buildstock data. Additionally, the building options module is called to update the new construction and existing options, and the vacant units are scaled to ensure that the desired population projection is met. The steps for new construction differ for ResStock and ComStock:</p>
 <p><strong>ResStock</strong></p>
 <ol class="arabic simple">
 <li><p><strong>Calculate New Construction Required</strong>: The population change from the previous year is calculated and divided by the occupant density (people/unit) to get a desired number of new units for each PUMA. Constraints are applied to this operation to set minimum construction rates, maximum construction rates, and bounds on the year to year change in construction rates.</p></li>
@@ -529,6 +541,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="readme.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BuildStock Projections </p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="installation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Installation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

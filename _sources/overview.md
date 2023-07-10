@@ -1,5 +1,5 @@
 # Overview and Methodology
-The buildstock-projections library calculates future building counts and tenure status while also providing a mechanism for users to define code adoption and existing building technology adoption. This is accomplished through the modules described below. There are four steps that get repeated with each timestep in which operations are performed on the previous year's buildstock. Modules are applied sequentially as:
+The buildstock-projections library calculates future building counts and tenure status (occupied/vacant) while also providing a mechanism for users to define code adoption and existing building technology adoption. This is accomplished through the modules described below. There are four steps that get repeated with each timestep in which operations are performed on the previous year's buildstock. Modules are applied sequentially as:
 
 1. Population Projections (prior to first timestep)
 2. Demolition (at each timestep)
@@ -11,7 +11,7 @@ The buildstock-projections library calculates future building counts and tenure 
 6. Results Vizualization (after final timestep)
 
 ## Population Projections [<sup>🔗</sup>](https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/population_estimate.py)
-The population module imports population projection inputs and applies a regression to infer missing data.This module runs prior to iterating through projection years and the outputs inform other modules. Inputs for the population module include baseline population data by PUMA, and population data for at least one future year. A 2nd order polynomial regression is applied to the input data to infer PUMA populations for timesteps in which there is no data. An example for one PUMA is shown below, where the population inputs are provided for 2020, 2030, and 2050.
+The population module imports population projection inputs and applies a regression to infer missing data. This module runs prior to iterating through projection years and the outputs inform other modules. Inputs for the population module include baseline population data by PUMA, and population data for at least one future year. A 2nd order polynomial regression is applied to the input data to infer PUMA populations for timesteps in which there is no data. An example for one PUMA is shown below, where the population inputs are provided for 2020, 2030, and 2050.
 
 :::{figure-md} population-fig
 <img src="./inputs/population_projection_example.png" class="bg-primary mb-1" width="500px" height="500px">
@@ -41,7 +41,7 @@ Future work may include implementation of a more advanced vacancy model that int
 
 
 ## New Construction [<sup>🔗</sup>](https://github.com/NREL/buildstock-projections/tree/main/buildstockprojections/new_construction.py)
-The new construction module calculates the number of new units or buildings that should be added in a timestep, then samples to generate new buildstock samples. Additionally, the building options module is called to update the new construction and existing options, and the vacant units are scaled to ensure that the desired population projection is met. The steps for new construction differ for ResStock and ComStock:
+The new construction module calculates the number of new units or buildings that should be added in a timestep, then samples to generate new buildstock data. Additionally, the building options module is called to update the new construction and existing options, and the vacant units are scaled to ensure that the desired population projection is met. The steps for new construction differ for ResStock and ComStock:
 
 **ResStock**
 1. **Calculate New Construction Required**: The population change from the previous year is calculated and divided by the occupant density (people/unit) to get a desired number of new units for each PUMA. Constraints are applied to this operation to set minimum construction rates, maximum construction rates, and bounds on the year to year change in construction rates.

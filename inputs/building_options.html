@@ -64,6 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'inputs/building_options';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running the Workflow" href="../usage.html" />
+    <link rel="prev" title="BuildStock Files" href="buildstocks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -144,13 +146,23 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../readme.html">
-                    BuildStock Projections
+                    BuildStock Projections 
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../overview/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../chapter.html">A chapter</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview and Methodology</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="inputs.html">Inputs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="project_cfg.html">Project Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="population.html">Population</a></li>
+<li class="toctree-l2"><a class="reference internal" href="buildstocks.html">BuildStock Files</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Future Building Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Running the Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outputs.html">Outputs and Vizualizations</a></li>
 </ul>
 
     </div>
@@ -377,7 +389,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="future-building-options">
 <h1>Future Building Options<a class="headerlink" href="#future-building-options" title="Permalink to this heading">#</a></h1>
-<p>At each timestep, building stock inputs can be updated for the existing stock and/or the set of new construction buildings with the use of a common file format stored as .csvs. We provide example files for new construction (ResStock and ComStock) <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources/inputs">here</a>, while more complex test files for <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/existing">existing</a> and <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/new_construction">new construction</a> ResStock buildings can be found in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA">tests</a> directory. The goal of these inputs are to change specific options for future building stock states.</p>
+<p>At each timestep, building stock inputs can be updated for the existing stock and/or the set of new construction buildings with the use of a common file format stored as .csv. We provide example files for new construction (ResStock and ComStock) <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/resources/inputs">here</a>, while more complex test files for <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/existing">existing</a> and <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA/new_construction">new construction</a> ResStock buildings can be found in the <a class="reference external" href="https://github.com/NREL/buildstock-projections/tree/main/tests/test_files/project_CA">tests</a> directory. The goal of these inputs are to change specific options for future building stock states.</p>
 <section id="package-apply-file">
 <h2>Package Apply File<a class="headerlink" href="#package-apply-file" title="Permalink to this heading">#</a></h2>
 <p>Both new construction and existing inputs may include a package_apply file as a way to help organize inputs and specify in which years packages get applied. The following columns are used to specify how packages are applied, all other column headers will be ignored:</p>
@@ -419,8 +431,8 @@ document.write(`
 <section id="building-option-specification-files">
 <h2>Building Option Specification Files<a class="headerlink" href="#building-option-specification-files" title="Permalink to this heading">#</a></h2>
 <p>At least one building option specification file, or “package”, is required to describe what and how options are updated. The following columns are used to specify this, all other column headers will be ignored:</p>
-<p><code class="docutils literal notranslate"><span class="pre">Parameter</span></code>: the parameter to be changes<br />
-<code class="docutils literal notranslate"><span class="pre">Option</span></code>:  the specific option that will be updated (based on Housing Characteristics columns)
+<p><code class="docutils literal notranslate"><span class="pre">Parameter</span></code>: the parameter to be changed<br />
+<code class="docutils literal notranslate"><span class="pre">Option</span></code>:  the specific option that will be updated (based on Housing Characteristics columns).<br />
 <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">Category</span></code>: a unique descriptor that groups together rows, all common parameters must have the same category, but multiple parameters can belong to the same category.<br />
 <code class="docutils literal notranslate"><span class="pre">Adoption</span> <span class="pre">Rate</span></code>: The fraction of buildings that have that option applied (dependent on the Housing Characteristics columns).<br />
 <code class="docutils literal notranslate"><span class="pre">Housing</span> <span class="pre">Characeteristics</span> <span class="pre">&lt;n&gt;</span></code> <em>(optional)</em>: characteristics by which to filter the building stock before applying the package options. Any number of Housing Characteristics columns can be included (1..n) and the filters follow the convention <code class="docutils literal notranslate"><span class="pre">Parameter||Option</span> <span class="pre">1|Option</span> <span class="pre">2|...|Option</span> <span class="pre">n</span></code>.</p>
@@ -511,6 +523,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="buildstocks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BuildStock Files</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../usage.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Running the Workflow</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
